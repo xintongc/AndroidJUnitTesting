@@ -1,6 +1,7 @@
 package com.example.com.testing;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,7 +11,7 @@ public class CalculatorTest {
     private Calculator mCalculator;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         mCalculator = new Calculator();
     }
 
@@ -33,4 +34,15 @@ public class CalculatorTest {
     public void multiply() {
         assertEquals(10d, mCalculator.multiply(2d, 5d), 0);
     }
+
+    @Ignore("not implemented yet")
+    public void testFactorial(){
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test(){
+        mCalculator.divide(4,0);
+    }
+
+
 }
